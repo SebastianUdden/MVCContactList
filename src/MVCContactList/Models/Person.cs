@@ -15,5 +15,8 @@ namespace MVCContactList
             Name = name;
             Email = email;
         }
+        public Person()
+        {
+        }
     }
 }

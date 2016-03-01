@@ -1,0 +1,25 @@
+﻿@using MVCContactList.ViewModels
+@model Person[]
+<html>
+<head>
+    <titel>Personer</titel>
+</head>
+<body>
+    <h1>Alla Kontakter</h1>
+    <table>
+        <tr>
+            <th>Namn</th>
+            <th>Epost</th>
+        </tr>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Email</td>
+            </tr>
+        }
+    </table>
+    <br /><br />
+    <input PostBackUrl="http://localhost:10112/customers/create" type="button" value="Lägg till" />
+</body>
+</html>
