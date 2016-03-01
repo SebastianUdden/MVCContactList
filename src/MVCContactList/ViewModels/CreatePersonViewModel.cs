@@ -15,7 +15,7 @@ namespace MVCContactList.ViewModels
         [Required(ErrorMessage = "Enter an email with an @ sign.")]
         public string Email { get; set; }
 
-        [Display(Name = "I accept terms and conditions.")]
+        [Display(Name = "I accept terms and conditions, and I want Ice cream!")]
         public bool AcceptTerms { get; set; }
     }
 }
