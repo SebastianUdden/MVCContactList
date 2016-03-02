@@ -8,7 +8,7 @@ namespace MVCContactList.Models
 {
     public class DataManager
     {
-        static List<ListPersonViewModel> ArrayOfContacts = new List<ListPersonViewModel>();
+        static List<Person> ListOfPeople = new List<Person>();
         public ListPersonViewModel[] GetAllContacts()
         {
             var contacts1 = new Person("Mikael", "mikael.brunnberg@gmail.com");
@@ -17,22 +17,27 @@ namespace MVCContactList.Models
             var LPVM1 = new ListPersonViewModel(contacts1.Name, contacts2.Email, false);
             var LPVM2 = new ListPersonViewModel(contacts2.Name, contacts2.Email, false);
 
-            ArrayOfContacts.Add(LPVM1);
-            ArrayOfContacts.Add(LPVM2);
+            ListOfPeople.Add(LPVM1);
+            ListOfPeople.Add(LPVM2);
 
-            return ArrayOfContacts
+            return ListOfPeople
                 .OrderBy(o => o.Name)
-                .Select(o=> )
+                .Select(o=> new ListPersonViewModel
+                {
+                    Name = o.Name,
+                    Email = o.Email,
+                    ShowAsHighlighted = o.Email.Split('@').Last() == "acme.com"
+                })
                 .ToArray();
         }
 
-        public void CreateContact()
+        public void AddPerson(CreatePersonViewModel viewModel)
         {
-        }
+            var person = new Person();
+            person.Name = viewModel.Name;
+            person.Email = viewModel.Email;
 
-        public AddPerson(CreatePersonViewModel )
-        {
-
+            ListOfPeople.Add(person);
         }
     }
 }
