@@ -2,11 +2,12 @@
 @model CreatePersonViewModel
 @addTagHelper "*, Microsoft.AspNet.Mvc.Taghelpers"
 
-<html>
-<head>
-    <title>Create Contact</title>
-</head>
-<body>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact";
+}
+
     <h1>Create Contact</h1>
     <div asp-validation-summary="ValidationSummary.All"></div>
 
@@ -26,5 +27,11 @@
         @*<a asp-controller="People" asp-action="Create">Ok</a>*@
         <input type="submit" value="Create" />
     </form>
-</body>
-</html>
+
+@*<html>
+    <head>
+        <title>Create Contact</title>
+    </head>
+    <body>*@
+@*</body>
+</html>*@
