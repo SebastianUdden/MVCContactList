@@ -9,19 +9,21 @@
 <body>
     <h1>Create Contact</h1>
     <div asp-validation-summary="ValidationSummary.All"></div>
+
     <form asp-controller="Customers" asp-action="Create">
         <label asp-for="Name"></label>
-        <input asp-for="Name" placeholder="Company" />
+        <input asp-for="Name" placeholder="First Name" />
         <span asp-validation-for="Name"></span>
-
+        <br />
         <label asp-for="Email"></label>
         <input asp-for="Email" placeholder="Address" />
         <span asp-validation-for="Email"></span>
-
+        <br />
         <label asp-for="AcceptTerms"></label>
-        <input asp-for="AcceptTerms" />
+        <input asp-for="AcceptTerms" type="checkbox" />
+        <span asp-validation-for="AcceptTerms" />
 
-        <input type="submit" value="Create" />
+        <input type="submit" onclick="window.location='/contacts/index'" value="Create" />
     </form>
 </body>
 </html>

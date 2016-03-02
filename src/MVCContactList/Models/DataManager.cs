@@ -13,7 +13,14 @@ namespace MVCContactList.Models
         {
             return ListOfContacts
                 .OrderBy(o => o.Name)
+                .Select(o=>)
                 .ToArray();
         }
+
+        public void CreateContact()
+        {
+        }
+
+        public AddPerson(CreatePersonViewModel)
     }
 }

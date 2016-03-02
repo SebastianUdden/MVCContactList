@@ -12,10 +12,12 @@ namespace MVCContactList.ViewModels
         public string Name { get; set; }
 
         [Display(Name = "E-mail")]
+        [Required(ErrorMessage = "Please enter an e-mail.")]
         [EmailAddress(ErrorMessage = "Must be a valid e-mail address")]
         public string Email { get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Must accept terms and conditions")]
+        [Display(Name = "Check box to accept terms.")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You must accept terms and conditions to proceed")]
         public bool AcceptTerms { get; set; }
     }
 }

@@ -16,11 +16,9 @@ namespace MVCContactList.Controllers
             return View(model);
         }
 
-        //public IActionResult Create()
-        //{
-        //    var dataManager = new DataManager();
-        //    var model = dataManager.GetYearInfo(id);
-        //    return View(model);
-        //}
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
