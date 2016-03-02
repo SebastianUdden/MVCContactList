@@ -10,8 +10,12 @@ namespace MVCContactList.ViewModels
     {
         [Display(Name = "First Name")]
         public string Name { get; set; }
-
-        [Display(Name = "E-mail")]
         public string Email { get; set; }
+
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Email must end with acme.com")]
+        public bool ShowAsHighlighted{ get; set; }
+
+
+
     }
 }

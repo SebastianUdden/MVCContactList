@@ -9,13 +9,13 @@ namespace MVCContactList.ViewModels
     public class CreatePersonViewModel
     {
         [Display(Name = "First Name")]
-        [Required(ErrorMessage = "Enter a name.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Enter an email with an @ sign.")]
+        [Display(Name = "E-mail")]
+        [EmailAddress(ErrorMessage = "Must be a valid e-mail address")]
         public string Email { get; set; }
 
-        [Display(Name = "I accept terms and conditions, and I really want Ice cream!")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Must accept terms and conditions")]
         public bool AcceptTerms { get; set; }
     }
 }

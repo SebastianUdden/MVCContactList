@@ -1,5 +1,5 @@
 ﻿@using MVCContactList.ViewModels
-@model ListPersonViewModel
+@model CreatePersonViewModel
 @addTagHelper "*, Microsoft.AspNet.Mvc.Taghelpers"
 
 <html>
@@ -8,19 +8,22 @@
 </head>
 <body>
     <h1>Alla Kontakter</h1>
-    <table>
+
+    <p>@Model.Name</p>
+    <p>@Model.Email</p>
+    @*<table>
         <tr>
             <th>Namn</th>
             <th>E-post</th>
         </tr>
-        @*@foreach (var person in Model)
+        @foreach (var person in Model)
         {
             <tr>
                 <td>@person.Name</td>
                 <td>@person.Email</td>
             </tr>
-        }*@
-    </table>
+        }
+    </table>*@
     <br /><br />
     <input PostBackUrl="http://localhost:10112/customers/create" type="button" value="Lägg till" />
 </body>
