@@ -8,31 +8,40 @@ namespace MVCContactList.Models
 {
     public class DataManager
     {
-        static List<ListPersonViewModel> ArrayOfContacts = new List<ListPersonViewModel>();
+        static List<Person> ListOfPeople = new List<Person>();
         public ListPersonViewModel[] GetAllContacts()
         {
-            #region Skapar två hrdkodade kontakter
+            #region Skapar två hårdkodade kontakter
             var contacts1 = new Person("Mikael", "mikael.brunnberg@gmail.com");
             var contacts2 = new Person("Sebastian", "sebastian.udden@gmail.com");
+            var contacts3 = new Person("Pontus", "pontus@acme.com");
 
-            var LPVM1 = new ListPersonViewModel(contacts1.Name, contacts2.Email, false);
-            var LPVM2 = new ListPersonViewModel(contacts2.Name, contacts2.Email, false);
-            var LPVM3 = new ListPersonViewModel("Pontus", "Pontus@acme.se", true);
+            var LPVM1 = new Person(contacts1.Name, contacts2.Email);
+            var LPVM2 = new Person(contacts2.Name, contacts2.Email);
+            var LPVM3 = new Person(contacts3.Name, contacts2.Email);
 
-            ArrayOfContacts.Add(LPVM1);
-            ArrayOfContacts.Add(LPVM2);
-            ArrayOfContacts.Add(LPVM3);
+            ListOfPeople.Add(LPVM1);
+            ListOfPeople.Add(LPVM2);
             #endregion
 
-            return ArrayOfContacts
+            return ListOfPeople
                 .OrderBy(o => o.Name)
+                .Select(o=> new ListPersonViewModel
+                {
+                    Name = o.Name,
+                    Email = o.Email,
+                    ShowAsHighlighted = o.Email.Split('@').Last() == "acme.com"
+                })
                 .ToArray();
         }
 
-        public void CreateContact()
+        public void AddPerson(CreatePersonViewModel viewModel)
         {
-        }
+            var person = new Person();
+            person.Name = viewModel.Name;
+            person.Email = viewModel.Email;
 
-        //public AddPerson(CreatePersonViewModel)
+            ListOfPeople.Add(person);
+        }
     }
 }

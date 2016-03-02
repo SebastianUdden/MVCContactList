@@ -10,12 +10,12 @@ namespace MVCContactList.Controllers
 {
     public class ContactsController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    var dataManager = new DataManager();
-        //    var model = dataManager.GetAllContacts();
+        public IActionResult Index()
+        {
+            var dataManager = new DataManager();
+            var model = dataManager.GetAllContacts();
             // Ändra till ListAllContacts
-            //return View(model);
+            return View(model);
         }
 
         public IActionResult Create(CreatePersonViewModel viewModel)
@@ -23,8 +23,16 @@ namespace MVCContactList.Controllers
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            var dataManager = new DataManager();
-            //dataManager.AddPerson(viewModel);
+            try
+            {
+                var dataManager = new DataManager();
+                dataManager.AddPerson(viewModel);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(nameof(CreatePersonViewModel.Name), "Fel!");
+                return View();
+            }
 
             return RedirectToAction(nameof(ContactsController.Index));
         }
