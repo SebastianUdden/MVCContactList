@@ -17,7 +17,14 @@
         {
             <tr>
                 <td>@person.Name</td>
-                <td>@person.Email</td>
+                @if (person.ShowAsHighlighted == true)
+                {
+                    <td style="color: green">@person.Email</td>
+                }
+                @if (person.ShowAsHighlighted == false)
+                {
+                    <td>@person.Email</td>
+                }
             </tr>
         }
     </table>
