@@ -17,11 +17,11 @@
         {
             <tr>
                 <td>@person.Name</td>
-                @if (person.ShowAsHighlighted == true)
+                @if (person.ShowAsHighlighted)
                 {
                     <td style="color: green">@person.Email</td>
                 }
-                @if (person.ShowAsHighlighted == false)
+                else
                 {
                     <td>@person.Email</td>
                 }

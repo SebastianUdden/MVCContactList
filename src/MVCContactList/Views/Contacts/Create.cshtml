@@ -16,15 +16,15 @@
         <span asp-validation-for="Name"></span>
         <br />
         <label asp-for="Email"></label>
-        <input asp-for="Email" placeholder="Address" />
+        <input asp-for="Email" placeholder="Email" />
         <span asp-validation-for="Email"></span>
         <br />
         <label asp-for="AcceptTerms"></label>
         <input asp-for="AcceptTerms" type="checkbox" />
         <span asp-validation-for="AcceptTerms" />
 
-        @*<a asp-controller="People" asp-action="Create">Skapa ny kontakt</a>*@
-        <input type="submit" onclick="window.location='/contacts/index'" value="Create" />
+        @*<a asp-controller="People" asp-action="Create">Ok</a>*@
+        <input type="submit" value="Create" />
     </form>
 </body>
 </html>

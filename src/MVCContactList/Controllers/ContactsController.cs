@@ -13,7 +13,7 @@ namespace MVCContactList.Controllers
         public IActionResult Index()
         {
             var dataManager = new DataManager();
-            var model = dataManager.GetAllContacts();
+            var model = dataManager.ListPeople();
             // Ändra till ListAllContacts
             return View(model);
         }

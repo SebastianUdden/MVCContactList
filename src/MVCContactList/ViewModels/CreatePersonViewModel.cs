@@ -9,6 +9,7 @@ namespace MVCContactList.ViewModels
     public class CreatePersonViewModel
     {
         [Display(Name = "First Name")]
+        [Required(ErrorMessage = "Person must have first name.")]
         public string Name { get; set; }
 
         [Display(Name = "E-mail")]
