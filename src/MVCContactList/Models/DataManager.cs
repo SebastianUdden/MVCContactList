@@ -17,9 +17,9 @@ namespace MVCContactList.Models
             var contacts2 = new Person("Sebastian", "sebastian.udden@gmail.com");
             var contacts3 = new Person("Pontus", "pontus@acme.com");
 
-            var LPVM1 = new Person(contacts1.Name, contacts2.Email);
+            var LPVM1 = new Person(contacts1.Name, contacts1.Email);
             var LPVM2 = new Person(contacts2.Name, contacts2.Email);
-            var LPVM3 = new Person(contacts3.Name, contacts2.Email);
+            var LPVM3 = new Person(contacts3.Name, contacts3.Email);
 
             ListOfPeople.Add(LPVM1);
             ListOfPeople.Add(LPVM2);
