@@ -8,11 +8,13 @@ namespace MVCContactList.ViewModels
 {
     public class ListPersonViewModel
     {
-        [Display(Name = "First Name")]
+        [Display(Name = "Förnamn")]
         public string Name { get; set; }
+
+        [Display(Name = "E-post")]
         public string Email { get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Email must end with acme.com")]
+        //[Range(typeof(bool), "true", "true", ErrorMessage = "Email must end with acme.com")]
         public bool ShowAsHighlighted{ get; set; }
 
 
