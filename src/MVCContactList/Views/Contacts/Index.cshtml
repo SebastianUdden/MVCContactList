@@ -15,24 +15,17 @@
     </tr>
     @foreach (var person in Model)
     {
-        <tr>
-            <td>@person.Name</td>
-            @if (person.ShowAsHighlighted)
-                {
-                <td style="color: green">@person.Email</td>
-            }
-            else
-            {
-                <td>@person.Email</td>
-            }
-        </tr>
+        @Html.Partial("ContactBox", person);
     }
 </table>
 <br /><br />
 <input onclick="window.location='/contacts/create'" type="button" value="Skapa ny kontakt" />
 
 
-
+@*@section com
+{
+    <div class="combox"><h1>Läsa</h1></div>
+}*@
 
 
 
