@@ -8,6 +8,18 @@ namespace MVCContactList.ViewModels
 {
     public class ListPersonViewModel
     {
+        public ListPersonViewModel()
+        {
+
+        }
+
+        public ListPersonViewModel(string name, string email, bool showAsHighlighted)
+        {
+            Name = name;
+            Email = email;
+            ShowAsHighlighted = showAsHighlighted;
+        }
+
         [Display(Name = "Förnamn")]
         public string Name { get; set; }
 
