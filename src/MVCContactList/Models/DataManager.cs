@@ -33,6 +33,6 @@ namespace MVCContactList.Models
         {
         }
 
-        public AddPerson(CreatePersonViewModel)
+        //public AddPerson(CreatePersonViewModel)
     }
 }

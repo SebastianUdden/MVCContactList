@@ -10,12 +10,12 @@ namespace MVCContactList.Controllers
 {
     public class ContactsController : Controller
     {
-        public IActionResult Index()
-        {
-            var dataManager = new DataManager();
-            var model = dataManager.GetAllContacts();
+        //public IActionResult Index()
+        //{
+        //    var dataManager = new DataManager();
+        //    var model = dataManager.GetAllContacts();
             // Ändra till ListAllContacts
-            return View(model);
+            //return View(model);
         }
 
         public IActionResult Create(CreatePersonViewModel viewModel)
@@ -24,7 +24,7 @@ namespace MVCContactList.Controllers
                 return View(viewModel);
 
             var dataManager = new DataManager();
-            dataManager.AddPerson(viewModel);
+            //dataManager.AddPerson(viewModel);
 
             return RedirectToAction(nameof(ContactsController.Index));
         }
