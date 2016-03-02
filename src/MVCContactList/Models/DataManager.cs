@@ -9,7 +9,8 @@ namespace MVCContactList.Models
     public class DataManager
     {
         static List<Person> ListOfPeople = new List<Person>();
-        public ListPersonViewModel[] GetAllContacts()
+
+        static DataManager()
         {
             #region Skapar två hårdkodade kontakter
             var contacts1 = new Person("Mikael", "mikael.brunnberg@gmail.com");
@@ -22,8 +23,11 @@ namespace MVCContactList.Models
 
             ListOfPeople.Add(LPVM1);
             ListOfPeople.Add(LPVM2);
+            ListOfPeople.Add(LPVM3);
             #endregion
-
+        }
+        public ListPersonViewModel[] ListPeople()
+        {
             return ListOfPeople
                 .OrderBy(o => o.Name)
                 .Select(o=> new ListPersonViewModel
