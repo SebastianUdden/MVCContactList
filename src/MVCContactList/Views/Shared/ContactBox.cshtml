@@ -1,23 +1,22 @@
 ﻿@using MVCContactList.ViewModels
 @model ListPersonViewModel
 
-@{
+@*@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Contact";
-}
+}*@
 
-<tr>
-    <td>@Model.Name</td>
-    <td>@Model.Email</td>
-    <td>
-        @if (Model.ShowAsHighlighted)
-        {
-            <p>VIP!</p>
-        }
-    </td>
-</tr>
-
-@section scripts
+@if (Model.ShowAsHighlighted)
 {
-    <script src=""></script>
+    <tr style="background-color:red;">
+        <td>@Model.Name</td>
+        <td>@Model.Email</td>
+    </tr>
+}
+else
+{
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Email</td>
+    </tr>
 }
