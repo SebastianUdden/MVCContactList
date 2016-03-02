@@ -17,12 +17,24 @@
         {
             <tr>
                 <td>@person.Name</td>
-                <td>@person.Email</td>
-            </tr>
+                <td>
+                    @if (person.ShowAsHighlighted)
+                    {
+                    <td style="color: forestgreen">
+                        @person.Email
+                    </td>
+                    }
+                    else
+                    {
+                        <td>@person.Email</td>
+                    }
+                    </td>
+                </tr>
         }
     </table>
     <br /><br />
-    <input onclick="window.location='/contacts/create'" type="button" value="Skapa ny kontakt" />
+
+    <a asp-controller="People" asp-action="@nameof(MVCContactList.Controllers.ContactsController.Create)">Skapa ny kontakt</a>
+    @*<input onclick="window.location='/contacts/create'" type="button" value="Skapa ny kontakt" />*@
 </body>
 </html>
-

@@ -22,7 +22,7 @@ namespace MVCContactList.Models
 
             return ArrayOfContacts
                 .OrderBy(o => o.Name)
-                .Select(o=>)
+                .Select(o=> )
                 .ToArray();
         }
 
@@ -30,6 +30,9 @@ namespace MVCContactList.Models
         {
         }
 
-        public AddPerson(CreatePersonViewModel)
+        public AddPerson(CreatePersonViewModel )
+        {
+
+        }
     }
 }

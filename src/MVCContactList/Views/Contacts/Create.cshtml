@@ -23,7 +23,8 @@
         <input asp-for="AcceptTerms" type="checkbox" />
         <span asp-validation-for="AcceptTerms" />
 
-        <input type="submit" onclick="window.location='/contacts/index'" value="Create" />
+        <a asp-controller="People" asp-action="Create">Skapa ny kontakt</a>
+@*        <input type="submit" onclick="window.location='/contacts/index'" value="Create" />*@
     </form>
 </body>
 </html>

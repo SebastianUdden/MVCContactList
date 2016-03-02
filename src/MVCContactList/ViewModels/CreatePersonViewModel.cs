@@ -13,7 +13,7 @@ namespace MVCContactList.ViewModels
 
         [Display(Name = "E-mail")]
         [Required(ErrorMessage = "Please enter an e-mail.")]
-        [EmailAddress(ErrorMessage = "Must be a valid e-mail address")]
+        [EmailAddress(ErrorMessage = "Invalid e-mail format")]
         public string Email { get; set; }
 
         [Display(Name = "Check box to accept terms.")]
