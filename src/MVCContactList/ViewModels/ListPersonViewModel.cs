@@ -25,8 +25,5 @@ namespace MVCContactList.ViewModels
         [Display(Name = "E-post")]
         public string Email { get; set; }
         public bool ShowAsHighlighted{ get; set; }
-
-
-
     }
 }
